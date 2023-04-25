@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.SocketException;
 
 /**
  * @author Carl
@@ -33,10 +32,10 @@ public class UDPReceiverA {
         System.out.println(s);
 
         //5.发送数据到9998
-        byte[] data1 = "好的明天见".getBytes();
-        DatagramPacket packet1 =
-                new DatagramPacket(data1,data1.length, InetAddress.getByName("192.168.31.136"),9998);
-        socket.send(packet1);
+        data = "好的明天见".getBytes();
+        packet =
+                new DatagramPacket(data,data.length, InetAddress.getByName("172.16.104.68"),9998);
+        socket.send(packet);
 
         socket.close();
     }
